@@ -1,0 +1,9 @@
+* Documentation for the Yomari Code Camp 2015
+Using Latex to create the require document
+** How to prepare the document
+
+#+BEGIN_SRC bash
+pdflatex report.tex
+#+END_SRC
+
+

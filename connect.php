@@ -1,9 +1,9 @@
 <?php
 
 $servername = "localhost";
-$databasename = "impress-tutorial";
-$username = "manish";
-$password = "Manish";
+$databasename = "impress_tutorial";
+$username = "impress";
+$password = "impress";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$databasename", $username, $password);
