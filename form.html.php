@@ -26,7 +26,7 @@
       <form method="post" action=".">
 
         <label for="slide_title">Slite title: </label><br>
-        <input type="text" name="slide_title" id="slide_title">
+        <input type="text" name="slide_title" id="slide_title" style="width:500px;">
 
         <br>
 
