@@ -14,12 +14,19 @@
       "searchreplace visualblocks code fullscreen",
       "insertdatetime media table contextmenu paste"
     ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-                                                                                                                      });
+    toolbar: "insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+  });
   </script>
+
+<script>
+function dump()
+{
+  window.alert(document.getElementByName('action').value);
+}
+</script>
   </head>
 
-  <body>
+  <body id="body">
     <div class="main-box">
       <h1 class="main-heading">Add slides</h1>
 
@@ -37,8 +44,8 @@
 
         <input type="hidden" name="slide_number" value="<?php echo $slide_number ?>">
 
-        <input type="button" value="Add slide">
-        <input type="submit" value="Finish">
+        <input type="button" value="Add slide" name="action" onclick="dump();">
+        <input type="button" value="Finish" name="action" onclick="dump();">
       </form>
     </div>
   </body>

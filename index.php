@@ -13,7 +13,10 @@ if (isset($_POST['title']))
     $slide_number = 1;
     include "form.html.php";
 }
-
+else if (isset($_POST['slide_details']))
+{
+    echo "JPT";
+}
 else
 {
     include "start.html.php";
