@@ -16,6 +16,14 @@ if (isset($_POST['action']))
             exit;
         }
 
+        $_SESSION['tutorial_filename'] = 'tutorial/' . str_replace('/', '-', str_replace(' ', '-', $tutorialTitle)) . '.html';
+
+        if (file_exists($_SESSION['tutorial_filename'])) {
+            include "start.html.php";
+            echo "<div class='error'><p>This name is already occupied. Choose another name.</p></div>";
+            exit;
+        }
+
         $header_file = fopen('tutorial_header.html', 'r') or die("Cannot open header file");
         $header_html = fread($header_file, filesize("tutorial_header.html"));
         fclose($header_file);
@@ -23,8 +31,6 @@ if (isset($_POST['action']))
             "<title>" . $tutorialTitle . "</title></head>" .
             "<body class='impress-not-supported'>" .
             "<div id='impress'>";
-
-        $_SESSION['tutorial_filename'] = 'tutorial/' . str_replace(' ', '-', $tutorialTitle) . '.html';
 
         $tutorial_file = fopen($_SESSION['tutorial_filename'], 'w') or die("Cannot open tutorial file");
         fwrite($tutorial_file, $header_html);

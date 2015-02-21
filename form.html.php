@@ -23,6 +23,8 @@
     <div class="main-box">
       <h1 class="main-heading">Add slide #<?php echo $slide_number; ?></h1>
 
+      <p>Your tutorial will be at: <?php echo $_SERVER['HTTP_REFERER'] . $_SESSION['tutorial_filename']; ?></p>
+
       <form method="post" action=".">
 
         <label for="slide_title">Slite title: </label><br>
