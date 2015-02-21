@@ -35,3 +35,6 @@ set permisssion of tutorial to be writable by others
 	chmod o+w tutorial
 ```
 ## Presetation
+
+Presentation of this project is being created at gh-pages branch
+http://YomariCodeCamp2015.github.io/impress-tutorial
