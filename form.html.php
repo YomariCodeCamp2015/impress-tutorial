@@ -5,17 +5,9 @@
     <title>Create slides</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <script src="http://tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+    <script src="tutorial/js/tinymce/tinymce.min.js"></script>
   <script>
-  tinymce.init({
-  selector: "textarea",
-    plugins: [
-      "advlist autolink lists link image charmap print preview anchor",
-      "searchreplace visualblocks code fullscreen",
-      "insertdatetime media table contextmenu paste"
-    ],
-    toolbar: "insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-  });
+  tinymce.init({ selector: "textarea" });
   </script>
   </head>
 
@@ -26,21 +18,22 @@
       <p>Your tutorial will be at: <?php echo $_SERVER['HTTP_REFERER'] . $_SESSION['tutorial_filename']; ?></p>
 
       <form method="post" action=".">
-
+        <p>
         <label for="slide_title">Slite title: </label><br>
         <input type="text" name="slide_title" id="slide_title" style="width:500px;">
+        </p>
 
-        <br>
-
+        <p>
         <label for="slide_details">Detailed info: </label><br>
         <textarea rows="10" cols="50" name="slide_details" id="slide_details"></textarea>
-
-        <br>
+        </p>
 
         <input type="hidden" name="slide_number" value="<?php echo $slide_number ?>">
 
+        <p>
         <input type="submit" value="Add slide" name="action">
         <input type="submit" value="Finish" name="action">
+        </p>
       </form>
     </div>
   </body>

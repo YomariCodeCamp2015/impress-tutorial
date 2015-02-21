@@ -12,10 +12,14 @@
       <h1 class="main-heading">Impress Tutorial</h1>
 
       <form method="post" action=".">
+        <p>
         <label for="title">Tutorial title: </label>
         <input type="text" name="title" id="title">
-        <br>
+        </p>
+
+        <p>
         <input type="submit" value="Create" name="action">
+        </p>
       </form>
     </div>
   </body>
