@@ -44,8 +44,8 @@ function dump()
 
         <input type="hidden" name="slide_number" value="<?php echo $slide_number ?>">
 
-        <input type="button" value="Add slide" name="action" onclick="dump();">
-        <input type="button" value="Finish" name="action" onclick="dump();">
+        <input type="submit" value="Add slide" name="action">
+        <input type="submit" value="Finish" name="action">
       </form>
     </div>
   </body>

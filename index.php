@@ -13,9 +13,22 @@ if (isset($_POST['title']))
     $slide_number = 1;
     include "form.html.php";
 }
-else if (isset($_POST['slide_details']))
+else if (isset($_POST['action']))
 {
-    echo "JPT";
+    if ($_POST['action'] == "Add slide")
+    {
+        $slide_number = $_POST['slide_number'] + 1;
+
+        include "form.html.php";
+    }
+    else if ($_POST['action'] == "Finish")
+    {
+        include "tutorial.html.php";
+    }
+    else
+    {
+        echo "<p>ERROR</p>";
+    }
 }
 else
 {
