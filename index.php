@@ -1,12 +1,22 @@
 <?php
 
-if (isset($_POST['title'])) {
-    echo "Working";
-}
-else {
-    include "start.html";
+if (isset($_POST['title']))
+{
+    $tutorialTitle = $_POST['title'];
 
-    echo $_POST['title'];
+    if ($tutorialTitle == "") {
+        include "start.html.php";
+        echo "<div class='error'><p>Title cannot be empty!</p></div>";
+        exit;
+    }
+
+    $slide_number = 1;
+    include "form.html.php";
+}
+
+else
+{
+    include "start.html.php";
 }
 
 ?>
