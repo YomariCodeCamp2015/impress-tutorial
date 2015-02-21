@@ -1,6 +1,5 @@
 <?php
 
-var_dump($_SESSION);
 session_start(); // session start must be used to acess previous session variable otherwise session will be null
 $step = 800;
 
@@ -25,8 +24,7 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
             echo "<div class='error'><p>This name is already occupied. Choose another name.</p></div>";
             exit;
         }
-        else
-        {
+        else {
             $_SESSION["tutorial_filename"]=$filename;
         }
 
@@ -42,16 +40,16 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
         fwrite($tutorial_file, $header_html);
         fclose($tutorial_file);
         
-        $slide_number = 1;
+        $_SESSION['slide_number'] = 1;
         include "form.html.php";
     }
     else if ($_POST['action'] == "Add slide")
     {
-        $slide_number = $_POST['slide_number'];
+        $_SESSION['slide_number'] = $_POST['slide_number'];
         $slide_title = $_POST['slide_title'];
         $slide_details = $_POST['slide_details'];
         $slide_html =
-            "<div class='step slide' data-x='0' data-y='" . ($slide_number * $step) . "'>" .
+            "<div class='step slide' data-x='0' data-y='" . ($_SESSION['slide_number'] * $step) . "'>" .
             "<h1 style='font-weight:bold;text-align:center;'>" . $slide_title . "</h1>" . $slide_details .
             "</div>";
 
@@ -59,17 +57,17 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
         fwrite($tutorial_file, $slide_html);
         fclose($tutorial_file);
 
-        $slide_number = $slide_number + 1;
+        $_SESSION["slide_number"] = $_SESSION["slide_number"] + 1;
         include "form.html.php";
     }
     else if ($_POST['action'] == "Finish")
     {
-        $slide_number = $_POST['slide_number'];
+        $_SESSION['slide_number'] = $_POST['slide_number'];
         $slide_title = $_POST['slide_title'];
         $slide_details = $_POST['slide_details'];
 
         $slide_html =
-            "<div class='step slide' data-x='0' data-y='".($slide_number * $step)."'>" .
+            "<div class='step slide' data-x='0' data-y='".($_SESSION['slide_number'] * $step)."'>" .
             "<h1 style='font-weight:bold;text-align:center;'>" . $slide_title . "</h1>" . $slide_details .
             "</div>";
 
@@ -93,7 +91,6 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
     else
     {
         include "form.html.php";
-        echo "<p>ERROR</p>";
     }
 }
 else

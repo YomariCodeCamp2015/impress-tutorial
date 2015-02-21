@@ -13,7 +13,7 @@
 
   <body id="body">
     <div class="main-box">
-      <h1 class="main-heading">Add slide #<?php echo $slide_number; ?></h1>
+      <h1 class="main-heading">Add slide #<?php echo $_SESSION['slide_number']; ?></h1>
 
       <p>Your tutorial will be at: <?php echo $_SERVER['HTTP_REFERER'] . $_SESSION['tutorial_filename']; ?></p>
 
@@ -28,7 +28,7 @@
         <textarea rows="10" cols="50" name="slide_details" id="slide_details"></textarea>
         </p>
 
-        <input type="hidden" name="slide_number" value="<?php echo $slide_number ?>">
+        <input type="hidden" name="slide_number" value="<?php echo $_SESSION['slide_number']; ?>">
 
         <p>
         <input type="submit" value="Add slide" name="action">
