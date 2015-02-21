@@ -1,11 +1,12 @@
 <?php
 
-session_start();
-
+var_dump($_SESSION);
+session_start(); // session start must be used to acess previous session variable otherwise session will be null
 $step = 800;
 
-if (isset($_POST['action']))
+if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
 {
+
     if ($_POST['action'] == "Create")
     {
         $tutorialTitle = $_POST['title'];
@@ -16,12 +17,17 @@ if (isset($_POST['action']))
             exit;
         }
 
-        $_SESSION['tutorial_filename'] = 'tutorial/' . str_replace('/', '-', str_replace(' ', '-', $tutorialTitle)) . '.html';
+
+        $filename = 'tutorial/' . str_replace('/', '-', str_replace(' ', '-', $tutorialTitle)) . '.html';
 
         if (file_exists($_SESSION['tutorial_filename'])) {
             include "start.html.php";
             echo "<div class='error'><p>This name is already occupied. Choose another name.</p></div>";
             exit;
+        }
+        else
+        {
+            $_SESSION["tutorial_filename"]=$filename;
         }
 
         $header_file = fopen('tutorial_header.html', 'r') or die("Cannot open header file");
@@ -76,9 +82,17 @@ if (isset($_POST['action']))
         fclose($tutorial_file);
 
         header('Location: ' . $_SESSION['tutorial_filename']);
+        session_unset();
+    }
+    else if ($_POST['action'] == "Cancel")
+    {
+        unlink($_SESSION['tutorial_filename']);
+        include "start.html.php";
+        session_unset();       
     }
     else
     {
+        include "form.html.php";
         echo "<p>ERROR</p>";
     }
 }

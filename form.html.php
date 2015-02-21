@@ -33,6 +33,7 @@
         <p>
         <input type="submit" value="Add slide" name="action">
         <input type="submit" value="Finish" name="action">
+        <input type="submit" value="Cancel" name="action">
         </p>
       </form>
     </div>
