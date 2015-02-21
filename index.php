@@ -1,6 +1,8 @@
 <?php
 
-$step = 1000;
+session_start();
+
+$step = 800;
 
 if (isset($_POST['action']))
 {
@@ -22,7 +24,9 @@ if (isset($_POST['action']))
             "<body class='impress-not-supported'>" .
             "<div id='impress'>";
 
-        $tutorial_file = fopen('tutorial.html', 'w') or die("Cannot open tutorial file");
+        $_SESSION['tutorial_filename'] = 'tutorial/' . str_replace(' ', '-', $tutorialTitle) . '.html';
+
+        $tutorial_file = fopen($_SESSION['tutorial_filename'], 'w') or die("Cannot open tutorial file");
         fwrite($tutorial_file, $header_html);
         fclose($tutorial_file);
         
@@ -39,7 +43,7 @@ if (isset($_POST['action']))
             "<h1 style='font-weight:bold;text-align:center;'>" . $slide_title . "</h1>" . $slide_details .
             "</div>";
 
-        $tutorial_file = fopen('tutorial.html', 'a+');
+        $tutorial_file = fopen($_SESSION['tutorial_filename'], 'a') or die("Cannot open tutorial file");
         fwrite($tutorial_file, $slide_html);
         fclose($tutorial_file);
 
@@ -61,11 +65,11 @@ if (isset($_POST['action']))
         $footer_html = fread($footer_file, filesize("tutorial_footer.html"));
         fclose($footer_file);
 
-        $tutorial_file = fopen('tutorial.html', 'a+');
+        $tutorial_file = fopen($_SESSION['tutorial_filename'], 'a') or die("Cannot open tutorial file");
         fwrite($tutorial_file, $slide_html . $footer_html);
         fclose($tutorial_file);
 
-        header('Location: tutorial.html');
+        header('Location: ' . $_SESSION['tutorial_filename']);
     }
     else
     {
