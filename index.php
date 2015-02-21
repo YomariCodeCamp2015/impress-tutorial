@@ -19,7 +19,7 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
 
         $filename = 'tutorial/' . str_replace('/', '-', str_replace(' ', '-', $tutorialTitle)) . '.html';
 
-        if (file_exists($_SESSION['tutorial_filename'])) {
+        if (file_exists($filename)) {
             include "start.html.php";
             echo "<div class='error'><p>This name is already occupied. Choose another name.</p></div>";
             exit;
