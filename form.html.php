@@ -17,13 +17,6 @@
     toolbar: "insertfile undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
   });
   </script>
-
-<script>
-function dump()
-{
-  window.alert(document.getElementByName('action').value);
-}
-</script>
   </head>
 
   <body id="body">
