@@ -15,7 +15,7 @@
         <label for="title">Tutorial title: </label>
         <input type="text" name="title" id="title">
         <br>
-        <input type="submit" value="Create">
+        <input type="submit" value="Create" name="action">
       </form>
     </div>
   </body>

@@ -1,21 +1,21 @@
 <?php
 
-if (isset($_POST['title']))
+if (isset($_POST['action']))
 {
-    $tutorialTitle = $_POST['title'];
+    if ($_POST['action'] == "Create")
+    {
+        $tutorialTitle = $_POST['title'];
 
-    if ($tutorialTitle == "") {
-        include "start.html.php";
-        echo "<div class='error'><p>Title cannot be empty!</p></div>";
-        exit;
+        if ($tutorialTitle == "") {
+            include "start.html.php";
+            echo "<div class='error'><p>Title cannot be empty!</p></div>";
+            exit;
+        }
+
+        $slide_number = 1;
+        include "form.html.php";
     }
-
-    $slide_number = 1;
-    include "form.html.php";
-}
-else if (isset($_POST['action']))
-{
-    if ($_POST['action'] == "Add slide")
+    else if ($_POST['action'] == "Add slide")
     {
         $slide_number = $_POST['slide_number'] + 1;
 

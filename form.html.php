@@ -28,7 +28,7 @@ function dump()
 
   <body id="body">
     <div class="main-box">
-      <h1 class="main-heading">Add slides</h1>
+      <h1 class="main-heading">Add slide #<?php echo $slide_number; ?></h1>
 
       <form method="post" action=".">
 
