@@ -22,7 +22,7 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
         $filename = 'tutorial/' . $_SESSION['title'] . '.html';
 
         if (file_exists($filename)) {
-            include "start.html.php";
+            include "../start.html.php";
             echo "<div class='error'><p>This name is already occupied. Choose another name.</p></div>";
             exit;
         }
@@ -145,8 +145,8 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
 
         // Write output
 
-        $header_file = fopen('tutorial_header.html', 'r') or die("Cannot open header file");
-        $html = fread($header_file, filesize("tutorial_header.html"));
+        $header_file = fopen('../tutorial_header.html', 'r') or die("Cannot open header file");
+        $html = fread($header_file, filesize("../tutorial_header.html"));
         fclose($header_file);
         $html = $html .
             "\n<title>" . $tutorialTitle . "</title></head>" .
@@ -164,8 +164,8 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
             $html = $html . "\n" . $slide_html;
         }
 
-        $footer_file = fopen('tutorial_footer.html', 'r');
-        $footer_html = fread($footer_file, filesize("tutorial_footer.html"));
+        $footer_file = fopen('../tutorial_footer.html', 'r');
+        $footer_html = fread($footer_file, filesize("../tutorial_footer.html"));
         $html = $html .
             "\n\n" . $footer_html;
         fclose($footer_file);
