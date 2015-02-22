@@ -38,3 +38,6 @@ chmod o+w tutorial
 
 Presentation of this project is being created at gh-pages branch
 http://YomariCodeCamp2015.github.io/impress-tutorial
+
+## Try it out
+(impress-tutorial at tutorial.sujit.email.np)[http://tutorial.sujit.email.np]
