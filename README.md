@@ -3,12 +3,12 @@
 
 1. Clone this repo
 ```
-	git clone https://github.com/shubhajeet/impress-tutorial
+git clone https://github.com/shubhajeet/impress-tutorial
 ```
 
 2. **Database migration**
 ```
-	mysql -u $USER -p < db_migration.sh
+mysql -u $USER -p < db_migration.sql
 ```
 
 3. *Edit default configuration*
@@ -32,7 +32,7 @@ emacs connect.php
 set permisssion of tutorial to be writable by others
 
 ```
-	chmod o+w tutorial
+chmod o+w tutorial
 ```
 ## Presetation
 
