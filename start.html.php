@@ -4,7 +4,7 @@
   <head>
     <title>Create a nice tutorial</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="public_html/style.css">
   </head>
 
   <body>
