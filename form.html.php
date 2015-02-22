@@ -37,7 +37,7 @@ try {
     <link rel="stylesheet" href="style.css">
     <script src="tutorial/js/tinymce/tinymce.min.js"></script>
   <script>
-  tinymce.init({ selector: "textarea", plugins: "image" });
+  tinymce.init({ selector: "textarea", plugins: "image code table" });
   </script>
   </head>
 
