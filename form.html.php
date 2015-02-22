@@ -49,7 +49,7 @@ try {
 
       <form method="post" action=".">
         <p>
-        <label for="slide_title">Slite title: </label><br>
+        <label for="slide_title">Slide title: </label><br>
         <input type="text" name="slide_title" id="slide_title" style="width:500px;" value="<?php echo $title; ?>">
         </p>
 
