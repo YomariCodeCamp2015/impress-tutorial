@@ -34,7 +34,7 @@ try {
   <head>
     <title>Create slides</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="tutorial/js/tinymce/tinymce.min.js"></script>
   <script>
   tinymce.init({ selector: "textarea", plugins: "image code table" });
