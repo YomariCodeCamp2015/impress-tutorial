@@ -10,7 +10,7 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
 
     if ($_POST['action'] == "Create")
     {
-        $_SESSION['title'] = str_replace('/', '-', str_replace(' ', '-', $_POST['title']));
+        $_SESSION['title'] = str_replace('/', '_', str_replace(' ', '_', $_POST['title']));
 
         if ($_SESSION['title'] == "") {
             include "start.html.php";
@@ -36,8 +36,7 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
             ")";
         try {
             $conn->exec($sql);
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo "Cannot create table: " . $e->getMessage();
         }
 
@@ -181,8 +180,7 @@ if (isset($_POST['action']) or isset($_SESSION["tutorial_filename"]))
         $sql = "DROP TABLE " . $_SESSION['title'];
         try {
             $conn->exec($sql);
-        }
-        catch (PDOException $e) {
+        } catch (PDOException $e) {
             echo "Cannot delete table: " . $e->getMessage();
         }
 
