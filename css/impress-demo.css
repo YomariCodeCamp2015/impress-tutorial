@@ -1,33 +1,3 @@
-/*
-    So you like the style of impress.js demo?
-    Or maybe you are just curious how it was done?
-
-    You couldn't find a better place to find out!
-
-    Welcome to the stylesheet impress.js demo presentation.
-
-    Please remember that it is not meant to be a part of impress.js and is
-    not required by impress.js.
-    I expect that anyone creating a presentation for impress.js would create
-    their own set of styles.
-
-    But feel free to read through it and learn how to get the most of what
-    impress.js provides.
-
-    And let me be your guide.
-
-    Shall we begin?
-*/
-
-
-/*
-    We start with a good ol' reset.
-    That's the one by Eric Meyer http://meyerweb.com/eric/tools/css/reset/
-
-    You can probably argue if it is needed here, or not, but for sure it
-    doesn't do any harm and gives us a fresh start.
-*/
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -74,13 +44,7 @@ table {
     border-spacing: 0;
 }
 
-/*
-    Now here is when interesting things start to appear.
 
-    We set up <body> styles with default font and nice gradient in the background.
-    And yes, there is a lot of repetition there because of -prefixes but we don't
-    want to leave anybody behind.
-*/
 body {
     font-family: 'PT Sans', sans-serif;
     min-height: 740px;
@@ -93,16 +57,8 @@ body {
     background:      -o-radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
     background:         radial-gradient(rgb(240, 240, 240), rgb(190, 190, 190));
 }
-
-/*
-    Now let's bring some text styles back ...
-*/
 b, strong { font-weight: bold }
 i, em { font-style: italic }
-
-/*
-    ... and give links a nice look.
-*/
 a {
     color: inherit;
     text-decoration: none;
@@ -124,17 +80,6 @@ a:focus {
     text-shadow: -1px -1px 2px rgba(100,100,100,0.5);
 }
 
-/*
-    Because the main point behind the impress.js demo is to demo impress.js
-    we display a fallback message for users with browsers that don't support
-    all the features required by it.
-
-    All of the content will be still fully accessible for them, but I want
-    them to know that they are missing something - that's what the demo is
-    about, isn't it?
-
-    And then we hide the message, when support is detected in the browser.
-*/
 
 .fallback-message {
     font-family: sans-serif;
@@ -157,15 +102,10 @@ a:focus {
     display: none;
 }
 
-/*
-    Now let's style the presentation steps.
-
-    We start with basics to make sure it displays correctly in everywhere ...
-*/
 
 .step {
     position: relative;
-    width: 900px;
+    width:1000px;
     padding: 40px;
     margin: 20px auto;
 
@@ -180,11 +120,7 @@ a:focus {
     line-height: 1.5;
 }
 
-/*
-    ... and we enhance the styles for impress.js.
 
-    Basically we remove the margin and make inactive steps a little bit transparent.
-*/
 .impress-enabled .step {
     margin: 0;
     opacity: 0.3;
@@ -198,14 +134,7 @@ a:focus {
 
 .impress-enabled .step.active { opacity: 1 }
 
-/*
-    These 'slide' step styles were heavily inspired by HTML5 Slides:
-    http://html5slides.googlecode.com/svn/trunk/styles.css
 
-    ;)
-
-    They cover everything what you see on first three steps of the demo.
-*/
 .slide {
     display: block;
 
@@ -250,10 +179,6 @@ a:focus {
     3D positioning along Z axis.
 */
 
-#title {
-    padding: 0;
-}
-
 #title .try {
     font-size: 64px;
     position: absolute;
@@ -261,24 +186,39 @@ a:focus {
     left: 1.5em;
 
     -webkit-transform: translateZ(20px);
+    -moz-transform:    translateZ(10px);
+    -ms-transform:     translateZ(10px);
+    -o-transform:      translateZ(10px);
+    transform:         translateZ(10px);
+}
+
+#title h1 {
+    font-size: 100px;
+
+    -webkit-transform: translateZ(20px);
     -moz-transform:    translateZ(20px);
     -ms-transform:     translateZ(20px);
     -o-transform:      translateZ(20px);
     transform:         translateZ(20px);
 }
-
-#title h1 {
-    font-size: 190px;
-
-    -webkit-transform: translateZ(50px);
-    -moz-transform:    translateZ(50px);
-    -ms-transform:     translateZ(50px);
-    -o-transform:      translateZ(50px);
+#title h2 {
+    font-size: 60px;
+    padding: 50px;
+    -webkit-transform: translateZ(20px);
+    -moz-transform:    translateZ(20px);
+    -ms-transform:     translateZ(20px);
+    -o-transform:      translateZ(20px);
     transform:         translateZ(50px);
 }
 
 #title .footnote {
-    font-size: 32px;
+    font-size: 40px;
+    padding: 50px;
+}
+#title .tiny {
+    width: 1000px;
+    font-size: 25px;
+    text-align: right;
 }
 
 /*
@@ -290,8 +230,8 @@ a:focus {
 #big {
     width: 600px;
     text-align: center;
-    font-size: 60px;
-    line-height: 1;
+    font-size: 10px;
+    line-height: ;
 }
 
 #big b {
@@ -308,10 +248,6 @@ a:focus {
 /*
     'Tiny ideas' just need some tiny styling.
 */
-#tiny {
-    width: 500px;
-    text-align: center;
-}
 
 /*
     This step has some animated text ...
