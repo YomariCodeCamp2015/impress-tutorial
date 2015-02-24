@@ -6,7 +6,7 @@ $username = $OPENSHIFT_MYSQL_DB_USERNAME;
 $password = $OPENSHIFT_MYSQL_DB_PASSWORD;
 
 try {
-    $conn = new PDO("mysql:$servername;dbname=$databasename", $username, $password);
+    $conn = new PDO("mysql:host=$servername;dbname=$databasename", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }
 catch (PDOException $e) {
