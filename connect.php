@@ -1,9 +1,9 @@
 <?php
 
-$servername = "$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/";
+$servername = $OPENSHIFT_MYSQL_DB_URL;
 $databasename = "impresstutorial";
-$username = "adminm8puRTF";
-$password = "VnEyrNm9i_-e";
+$username = $OPENSHIFT_MYSQL_DB_USERNAME;
+$password = $OPENSHIFT_MYSQL_DB_PASSWORD;
 
 try {
     $conn = new PDO("mysql:$servername;dbname=$databasename", $username, $password);
