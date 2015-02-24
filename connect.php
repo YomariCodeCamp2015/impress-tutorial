@@ -1,9 +1,9 @@
 <?php
 
-$servername = "localhost";
-$databasename = "impress_tutorial";
-$username = "impress";
-$password = "impress";
+$servername = "mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/";
+$databasename = "impresstutorial";
+$username = "adminm8puRTF";
+$password = "VnEyrNm9i_-e";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$databasename", $username, $password);
